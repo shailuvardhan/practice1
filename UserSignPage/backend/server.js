@@ -4,6 +4,10 @@ const app = express();
 const sqlite3 = require("sqlite3").verbose();
 const jwt = require("jsonwebtoken");
 const uuid = require("uuid");
+const cors = require("cors");
+
+app.use(express.json());
+app.use(cors());
 
 // Set up SQLite database
 const db = new sqlite3.Database("users.db");
